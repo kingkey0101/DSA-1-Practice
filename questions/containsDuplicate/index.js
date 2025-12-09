@@ -22,7 +22,6 @@
 //   }
 // };
 
-
 //brute force solution:
 //time complexity: 0(n^2) -> double for loop | space complexity: 0(1) -> not storing anything
 
@@ -50,11 +49,19 @@
 //     return false
 // }
 
-//optimal solution:
+//optimal solution(
+// store each i in set or map, so we can look up the element in constant(instant) time.
+// **most optimal because loop once(time complexity: O(n)) and(Space complexity: )(n)). Worst case, you need to add every element to the set ) =
 
 const containsDuplicate = (nums) => {
-    
-}
-
+  const set = new Set();
+  for (let i = 0; i < nums.length; ++i) {
+   if(set.has(nums[i])){
+    return true
+   }
+   set.add(nums[i])
+  }
+  return false
+};
 
 module.exports = containsDuplicate;
