@@ -9,8 +9,18 @@
   * maxSubArray([2, 4, 3, -1, -4, -9]) = 9
   */
 
+// top tech solution, O(n) time, O(1) space
 const maxSubArray = (nums) => {
+if(nums.length === 0) return 0;
+let currentMax = nums[0]
+let globalMax = nums[0]
 
+for (let i = 1; i < nums.length; ++i){
+  currentMax = Math.max(nums[i], currentMax + nums[i])
+  globalMax = Math.max(globalMax, currentMax)
+  console.log(currentMax, globalMax)
+}
+return globalMax
 }
 
 //DO NOT EDIT BELOW THIS LINE
